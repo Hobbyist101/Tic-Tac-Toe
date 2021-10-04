@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title> Tic Tak Toe </title>
+</head>
+<body>
+    <div class="title">
+        <h1> Tic Tac Toe </h1>
+        <div class="playerSection"> 
+            <div id="player1" class="player"> Player 1 </div>
+            <div id="gameboard"> Round 1 </div>
+            <div id="player2" class="player"> Player 2  </div>
+        </div>
+    </div>
+    <div class="board">
+        <div id="drawingBoard">
+            <div id="box1" class="boxes" data-number="0" data-row="1" data-col="1">
+                <img src="./cross.jpg" id="cross">
+                <img src="./circle.jpg" id="circle">
+            </div>
+            <div id="box2" class="boxes" data-number="1" data-row="1" data-col="3">
+                <img src="./cross.jpg" id="cross">
+                <img src="./circle.jpg" id="circle">
+            </div>
+            <div id="box3" class="boxes" data-number="2" data-row="1" data-col="3">
+                <img src="./cross.jpg" id="cross">
+                <img src="./circle.jpg" id="circle">
+            </div>
+            <div id="box4" class="boxes" data-number="3" data-row="2" data-col="1">
+                <img src="./cross.jpg" id="cross">
+                <img src="./circle.jpg" id="circle">
+            </div>
+            <div id="box5" class="boxes" data-number="4" data-row="2" data-col="2">
+                <img src="./cross.jpg" id="cross">
+                <img src="./circle.jpg" id="circle">
+            </div>
+            <div id="box6" class="boxes" data-number="5" data-row="2" data-col="3">
+                <img src="./cross.jpg" id="cross">
+                <img src="./circle.jpg" id="circle">
+            </div>
+            <div id="box7" class="boxes" data-number="6" data-row="3" data-col="1">
+                <img src="./cross.jpg" id="cross">
+                <img src="./circle.jpg" id="circle">
+            </div>
+            <div id="box8" class="boxes" data-number="7" data-row="3" data-col="2">
+                <img src="./cross.jpg" id="cross">
+                <img src="./circle.jpg" id="circle">
+            </div>
+            <div id="box9" class="boxes" data-number="8" data-row="3" data-col="3">
+                <img src="./cross.jpg" id="cross">
+                <img src="./circle.jpg" id="circle">
+            </div>
+        </div>
+    </div>
+    <div class="buttons"> 
+        <button id="circleBtn" class="button" data-key="circle"> Circle </button>
+        <button id="crossBtn" class="button" data-key="cross"> Cross </button>
+    </div>
+    <div class='resetSection'>
+    <button id="resetBtn" class="button"> Reset </button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -30,24 +30,34 @@
             opponentChoice = 'circle';
         }
         buttons.style.display = 'none';
+        showResetBtn();
+    }
+
+    const showResetBtn = () => {
+        resetBtn.style.display = 'block';
+        resetBtn.addEventListener('click', endgame);
+    }
+
+    const endgame = () => {
+        window.location.reload(false);
     }
 
     const game = (input) => {
         //checkAvailable
         if (playerChoice != undefined && input.target.dataset.number >= 0 && input.target.dataset.number <= 8){
-            showSymbol(input); 
+            showSymbol(input);
         } 
     }
 
     const showSymbol = (input) => {
        // Player Serve
        if (currentPlayer == 'Player 1'){
-            player1.style.backgroundColor = 'lightblue';
+            player1.style.backgroundColor = 'lightgreen';
             player2.style.backgroundColor = '';
             currentPlayer = 'Player 2';
             player(input,currentPlayer);
         } else {
-            player2.style.backgroundColor = 'lightblue';
+            player2.style.backgroundColor = 'lightgreen';
             player1.style.backgroundColor = '';
             currentPlayer = 'Player 1';
             player(input,currentPlayer);
@@ -73,27 +83,21 @@
                 opponentInput.push(currentInput.target.dataset.number);
             } 
             for(let [index, combo] of WINNING_COMBINATIONS.entries()) {
-                // Winner Found, Refresh
+                // Winner Found
                 if (combo.every(elem => playerInput.indexOf(elem) > -1) || combo.every(elem => opponentInput.indexOf(elem) > -1)) {
                     gameboard.textContent = 'Congratulation, ' + currentPlayer + ' won!';
-                    gameboard.style.backgroundColor = 'blue';
+                    gameboard.style.backgroundColor = 'lime';
                     player1.style.backgroundColor = '';
                     player2.style.backgroundColor = '';
-                    resetBtn.style.display = 'block';
                     boxes.forEach(box => box.dataset.number -= 9)
-                    resetBtn.addEventListener('click', endgame);
-                }
+                } 
             }
     } 
-    const endgame = () => {
-        window.location.reload(false);
-    }
 
-    player1.style.backgroundColor = 'lightblue'
+    player1.style.backgroundColor = 'lightgreen'
     circleBtn.addEventListener('click', choice, {once:true});
     crossBtn.addEventListener('click', choice, {once:true});
     boxes.forEach(box => {
         box.addEventListener('click', game);
     });
-    resetBtn.addEventListener('click', endgame);
 })()

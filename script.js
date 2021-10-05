@@ -52,12 +52,12 @@
     const showSymbol = (input) => {
        // Player Serve
        if (currentPlayer == 'Player 1'){
-            player1.style.backgroundColor = 'lightgreen';
+            player1.style.backgroundColor = 'lightblue';
             player2.style.backgroundColor = '';
             currentPlayer = 'Player 2';
             player(input,currentPlayer);
         } else {
-            player2.style.backgroundColor = 'lightgreen';
+            player2.style.backgroundColor = 'lightblue';
             player1.style.backgroundColor = '';
             currentPlayer = 'Player 1';
             player(input,currentPlayer);
@@ -86,7 +86,7 @@
                 // Winner Found
                 if (combo.every(elem => playerInput.indexOf(elem) > -1) || combo.every(elem => opponentInput.indexOf(elem) > -1)) {
                     gameboard.textContent = 'Congratulation, ' + currentPlayer + ' won!';
-                    gameboard.style.backgroundColor = 'lime';
+                    gameboard.style.backgroundColor = '#DC0F2A';
                     player1.style.backgroundColor = '';
                     player2.style.backgroundColor = '';
                     boxes.forEach(box => box.dataset.number -= 9)
@@ -94,7 +94,7 @@
             }
     } 
 
-    player1.style.backgroundColor = 'lightgreen'
+    player1.style.backgroundColor = 'lightblue'
     circleBtn.addEventListener('click', choice, {once:true});
     crossBtn.addEventListener('click', choice, {once:true});
     boxes.forEach(box => {
